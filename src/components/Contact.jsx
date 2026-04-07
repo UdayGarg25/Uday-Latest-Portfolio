@@ -15,16 +15,20 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_mwwjmgy";
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_5orvugc";
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "XSerwwXd6jHNWtFu4";
+
     emailjs
       .send(
-        "service_mwwjmgy",
-        "template_5orvugc",
+        serviceId,
+        templateId,
         {
           name: form.name,
           email: form.email,
           message: form.message,
         },
-        "XSerwwXd6jHNWtFu4",
+        publicKey,
       )
       .then(() => {
         setSubmitted(true);
