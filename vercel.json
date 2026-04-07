@@ -1,3 +1,4 @@
 {
-  "buildCommand": "rm -rf node_modules package-lock.json && npm install && npx vite build"
+  "installCommand": "npm install -g pnpm && pnpm install",
+  "buildCommand": "pnpm vite build"
 }
