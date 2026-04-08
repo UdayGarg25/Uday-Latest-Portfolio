@@ -22,7 +22,7 @@ export default function Projects() {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="py-16 sm:py-28 relative">
+    <section id="projects" className="py-16 sm:py-28 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="blob w-80 sm:w-96 h-80 sm:h-96 bg-accent"

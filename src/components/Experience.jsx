@@ -5,7 +5,7 @@ export default function Experience() {
   const ref = useScrollReveal();
 
   return (
-    <section id="experience" className="py-16 sm:py-26 relative">
+    <section id="experience" className="py-16 sm:py-26 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="blob w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-accent2"

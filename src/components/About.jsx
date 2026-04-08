@@ -5,7 +5,7 @@ export default function About() {
   const ref = useScrollReveal();
 
   return (
-    <section id="about" className="py-16 sm:py-28 relative">
+    <section id="about" className="py-16 sm:py-28 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="blob w-60 sm:w-72 h-60 sm:h-72 bg-accent2 opacity-8" style={{ top: '20%', right: '-5%' }} />
       </div>
