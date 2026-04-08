@@ -8,19 +8,19 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-border bg-surface py-10 px-6">
+    <footer className="border-t border-border bg-surface py-6 sm:py-10 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Logo */}
           <div className="flex flex-col items-center sm:items-start">
-            <span className="font-display font-bold text-xl text-gradient">UG.</span>
-            <span className="text-xs font-mono text-text-dim mt-1">
+            <span className="font-display font-bold text-lg sm:text-xl text-gradient">UG.</span>
+            <span className="text-xs font-mono text-text-dim mt-0.5 sm:mt-1">
               Full Stack Developer
             </span>
           </div>
 
           {/* Quick links */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             {['#about', '#skills', '#projects', '#contact'].map((href) => (
               <button
                 key={href}
@@ -33,12 +33,12 @@ export default function Footer() {
           </div>
 
           {/* Social */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-text-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
+              className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg glass-card flex items-center justify-center text-text-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
               title="GitHub"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@ export default function Footer() {
               href={portfolioData.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-text-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
+              className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg glass-card flex items-center justify-center text-text-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
               title="LinkedIn"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@ export default function Footer() {
             </a>
             <a
               href={`mailto:${portfolioData.personal.email}`}
-              className="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-text-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
+              className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg glass-card flex items-center justify-center text-text-dim hover:text-accent hover:border-accent/30 transition-all duration-200"
               title="Email"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom line */}
-        <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2">
           <p className="text-xs font-mono text-muted">
             © {year} Uday Garg. All rights reserved.
           </p>

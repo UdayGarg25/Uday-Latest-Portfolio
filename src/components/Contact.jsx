@@ -40,7 +40,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 relative">
+    <section id="contact" className="py-16 sm:py-28 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div
           style={{
@@ -51,30 +51,30 @@ export default function Contact() {
         />
       </div>
 
-      <div ref={ref} className="section-reveal max-w-6xl mx-auto px-6">
+      <div ref={ref} className="section-reveal max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-4">
-          <span className="font-mono text-sm text-accent tracking-widest">
+        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 flex-wrap">
+          <span className="font-mono text-xs sm:text-sm text-accent tracking-widest">
             05.
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-text">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-text">
             Get In Touch
           </h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent max-w-xs" />
+          <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent max-w-xs hidden sm:block" />
         </div>
-        <p className="text-text-dim font-body text-base mb-12 ml-10">
+        <p className="text-text-dim font-body text-xs sm:text-base mb-8 sm:mb-12 ml-0 sm:ml-10">
           Have a project in mind or want to collaborate? Let's talk!
         </p>
 
-        <div className="grid lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             <div>
-              <h3 className="font-display font-semibold text-xl text-text mb-3">
+              <h3 className="font-display font-semibold text-lg sm:text-xl text-text mb-2 sm:mb-3">
                 Let's build something{" "}
                 <span className="text-gradient">great together</span>
               </h3>
-              <p className="text-text-dim font-body text-sm leading-relaxed">
+              <p className="text-text-dim font-body text-xs sm:text-sm leading-relaxed">
                 I'm actively looking for internship and full-time opportunities.
                 Whether you have a project, a question, or just want to say hi —
                 my inbox is always open.
@@ -82,7 +82,7 @@ export default function Contact() {
             </div>
 
             {/* Contact details */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {[
                 {
                   icon: "✉️",
@@ -114,14 +114,14 @@ export default function Contact() {
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-accent/30 transition-all duration-300 group"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg sm:rounded-xl glass-card hover:border-accent/30 transition-all duration-300 group"
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  <span className="text-lg sm:text-xl">{item.icon}</span>
                   <div>
                     <div className="text-xs font-mono text-text-dim mb-0.5">
                       {item.label}
                     </div>
-                    <div className="text-sm font-body text-text group-hover:text-accent transition-colors duration-200">
+                    <div className="text-xs sm:text-sm font-body text-text group-hover:text-accent transition-colors duration-200">
                       {item.val}
                     </div>
                   </div>
@@ -135,13 +135,13 @@ export default function Contact() {
 
           {/* Contact form */}
           <div className="lg:col-span-3">
-            <div className="glass-card rounded-2xl p-6 sm:p-8">
-              <h3 className="font-display font-semibold text-lg text-text mb-6">
+            <div className="glass-card rounded-lg sm:rounded-2xl p-4 sm:p-6 md:p-8">
+              <h3 className="font-display font-semibold text-base sm:text-lg text-text mb-4 sm:mb-6">
                 Send me a message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
                     <label className="block text-xs font-mono text-text-dim mb-2">
                       Your Name
@@ -153,7 +153,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text text-sm font-body placeholder-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all duration-200"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-bg border border-border text-text text-xs sm:text-sm font-body placeholder-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -167,7 +167,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text text-sm font-body placeholder-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all duration-200"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-bg border border-border text-text text-xs sm:text-sm font-body placeholder-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -183,11 +183,11 @@ export default function Contact() {
                     required
                     rows={5}
                     placeholder="Tell me about your project or opportunity..."
-                    className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text text-sm font-body placeholder-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all duration-200 resize-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-bg border border-border text-text text-xs sm:text-sm font-body placeholder-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/20 transition-all duration-200 resize-none"
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full py-3.5">
+                <button type="submit" className="btn-primary w-full py-2.5 sm:py-3.5">
                   <span className="flex items-center justify-center gap-2">
                     {submitted ? "✓ Message Sent!" : "Send Message →"}
                   </span>

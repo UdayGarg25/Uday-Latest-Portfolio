@@ -22,33 +22,33 @@ export default function Projects() {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="py-28 relative">
+    <section id="projects" className="py-16 sm:py-28 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="blob w-80 h-80 bg-accent"
+          className="blob w-80 sm:w-96 h-80 sm:h-96 bg-accent"
           style={{ top: '10%', right: '-5%', opacity: 0.07 }}
         />
       </div>
 
-      <div ref={ref} className="section-reveal max-w-6xl mx-auto px-6">
+      <div ref={ref} className="section-reveal max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-4">
-          <span className="font-mono text-sm text-accent tracking-widest">03.</span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-text">Projects</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent max-w-xs" />
+        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 flex-wrap">
+          <span className="font-mono text-xs sm:text-sm text-accent tracking-widest">03.</span>
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-text">Projects</h2>
+          <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent max-w-xs hidden sm:block" />
         </div>
-        <p className="text-text-dim font-body text-base mb-12 ml-10">
+        <p className="text-text-dim font-body text-xs sm:text-base mb-8 sm:mb-12 ml-0 sm:ml-10">
           Things I've built with passion
         </p>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {portfolioData.projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
 
         {/* GitHub CTA */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 sm:mt-12 text-center">
           <a
             href={portfolioData.personal.github}
             target="_blank"
@@ -77,23 +77,23 @@ function ProjectCard({ project, index }) {
       />
 
       {/* Card body */}
-      <div className="flex flex-col flex-1 p-6">
+      <div className="flex flex-col flex-1 p-4 sm:p-6">
         {/* Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center gap-3">
+        <div className="flex items-start justify-between mb-3 sm:mb-4">
+          <div className="flex items-center gap-2 sm:gap-3">
             <div
-              className="w-10 h-10 rounded-lg flex items-center justify-center text-xl flex-shrink-0"
+              className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg flex items-center justify-center text-lg sm:text-xl flex-shrink-0"
               style={{ background: project.color + '15', border: `1px solid ${project.color}25` }}
             >
               {project.icon}
             </div>
-            <h3 className="font-display font-bold text-base text-text leading-tight">
+            <h3 className="font-display font-bold text-sm sm:text-base text-text leading-tight">
               {project.title}
             </h3>
           </div>
 
           {/* Links */}
-          <div className="flex gap-2 ml-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex gap-1.5 sm:gap-2 ml-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
             <a
               href={project.github}
               target="_blank"
@@ -116,12 +116,12 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Description */}
-        <p className="text-text-dim font-body text-sm leading-relaxed mb-5 flex-1">
+        <p className="text-text-dim font-body text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
           {project.description}
         </p>
 
         {/* Highlights */}
-        <ul className="space-y-1.5 mb-5">
+        <ul className="space-y-1 sm:space-y-1.5 mb-4 sm:mb-5">
           {project.highlights.map((hl) => (
             <li key={hl} className="flex items-start gap-2 text-xs font-body text-text-dim">
               <span style={{ color: project.color }} className="mt-0.5 flex-shrink-0">▸</span>
@@ -131,11 +131,11 @@ function ProjectCard({ project, index }) {
         </ul>
 
         {/* Tech stack */}
-        <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border">
+        <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-3 sm:pt-4 border-t border-border">
           {project.tech.map((t) => (
             <span
               key={t}
-              className="text-xs font-mono px-2 py-0.5 rounded"
+              className="text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded"
               style={{
                 background: project.color + '10',
                 color: project.color + 'CC',

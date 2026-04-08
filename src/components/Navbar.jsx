@@ -38,25 +38,25 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="font-display font-bold text-xl tracking-tight"
+          className="font-display font-bold text-sm sm:text-lg tracking-tight"
         >
           <span className="text-gradient">UG</span>
           <span className="text-text-dim font-light">.</span>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNav(e, link.href)}
-              className={`nav-link text-sm font-body font-medium transition-colors duration-200 ${
+              className={`nav-link text-xs sm:text-sm font-body font-medium transition-colors duration-200 whitespace-nowrap ${
                 active === link.href ? 'text-accent' : 'text-text-dim hover:text-text'
               }`}
             >
@@ -67,7 +67,7 @@ export default function Navbar() {
             href={portfolioData.personal.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-xs px-4 py-2"
+            className="btn-primary text-xs px-3 sm:px-4 py-2"
           >
             <span>Resume ↗</span>
           </a>
@@ -75,13 +75,13 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 group"
+          className="md:hidden flex flex-col gap-1.5 p-1 group"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-text transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-text transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-text transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-5 h-0.5 bg-text transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-5 h-0.5 bg-text transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-0.5 bg-text transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
@@ -91,13 +91,13 @@ export default function Navbar() {
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="glass border-t border-border px-6 py-4 flex flex-col gap-4">
+        <div className="glass border-t border-border px-4 sm:px-6 py-3 flex flex-col gap-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNav(e, link.href)}
-              className="text-text-dim hover:text-accent font-body font-medium text-sm transition-colors duration-200 py-1"
+              className="text-text-dim hover:text-accent font-body font-medium text-xs sm:text-sm transition-colors duration-200 py-1"
             >
               {link.label}
             </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
             href={portfolioData.personal.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline text-center text-xs py-2"
+            className="btn-outline text-center text-xs py-2 px-3 inline-block w-full"
           >
             Download Resume ↗
           </a>

@@ -69,95 +69,95 @@ export default function Hero() {
         }}
       />
 
-      {/* Animated blobs */}
+      {/* Animated blobs - scaled down on mobile */}
       <div
-        className="blob w-96 h-96 bg-accent"
+        className="blob w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-accent"
         style={{ top: '10%', left: '-10%' }}
       />
       <div
-        className="blob w-80 h-80 bg-accent2"
+        className="blob w-40 sm:w-56 md:w-72 lg:w-80 h-40 sm:h-56 md:h-72 lg:h-80 bg-accent2"
         style={{ bottom: '10%', right: '-8%', animationDelay: '7s' }}
       />
       <div
-        className="blob w-64 h-64 bg-accent3"
+        className="blob w-32 sm:w-48 md:w-56 lg:w-64 h-32 sm:h-48 md:h-56 lg:h-64 bg-accent3"
         style={{ top: '50%', left: '60%', animationDelay: '14s' }}
       />
 
-      {/* Floating orbs */}
-      <div className="absolute top-1/4 right-1/4 w-3 h-3 rounded-full bg-accent opacity-60 animate-float" />
+      {/* Floating orbs - hidden on small mobile */}
+      <div className="hidden sm:block absolute top-1/4 right-1/4 w-3 h-3 rounded-full bg-accent opacity-60 animate-float" />
       <div
-        className="absolute bottom-1/3 left-1/4 w-2 h-2 rounded-full bg-accent2 opacity-50 animate-float"
+        className="hidden sm:block absolute bottom-1/3 left-1/4 w-2 h-2 rounded-full bg-accent2 opacity-50 animate-float"
         style={{ animationDelay: '2s' }}
       />
       <div
-        className="absolute top-2/3 right-1/3 w-1.5 h-1.5 rounded-full bg-accent3 opacity-70 animate-float"
+        className="hidden sm:block absolute top-2/3 right-1/3 w-1.5 h-1.5 rounded-full bg-accent3 opacity-70 animate-float"
         style={{ animationDelay: '4s' }}
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
           {/* Text content */}
-          <div className="flex-1 max-w-2xl">
+          <div className="flex-1 max-w-2xl w-full">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent3 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-4 sm:mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent3 animate-pulse" />
               <span className="text-xs font-mono text-accent/80 tracking-wider">
                 Available for opportunities
               </span>
             </div>
 
             {/* Name */}
-            <h1 className="font-display font-extrabold leading-none mb-4">
-              <span className="block text-5xl sm:text-6xl lg:text-7xl text-text">
+            <h1 className="font-display font-extrabold leading-none mb-3 sm:mb-4">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-text">
                 Uday
               </span>
-              <span className="block text-5xl sm:text-6xl lg:text-7xl text-gradient">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient">
                 Garg
               </span>
             </h1>
 
             {/* Typing role */}
-            <div className="flex items-center gap-2 mb-6 h-9">
-              <span className="text-xl sm:text-2xl font-display font-semibold text-text-dim">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6 h-6 sm:h-8 md:h-9">
+              <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-display font-semibold text-text-dim min-h-6">
                 {displayText}
               </span>
-              <span className="cursor-blink text-accent text-2xl font-light">|</span>
+              <span className="cursor-blink text-accent text-lg sm:text-xl md:text-2xl font-light">|</span>
             </div>
 
             {/* Bio */}
-            <p className="text-text-dim font-body text-base lg:text-lg leading-relaxed max-w-xl mb-10">
+            <p className="text-text-dim font-body text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-6 sm:mb-10">
               {portfolioData.personal.bio}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-12">
-              <button onClick={scrollToProjects} className="btn-primary">
+            <div className="flex flex-wrap gap-2 sm:gap-4 mb-8 sm:mb-12">
+              <button onClick={scrollToProjects} className="btn-primary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3">
                 <span>View My Work</span>
               </button>
-              <button onClick={scrollToContact} className="btn-outline">
+              <button onClick={scrollToContact} className="btn-outline text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3">
                 Get In Touch →
               </button>
               <a
                 href={portfolioData.personal.resumeLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline"
+                className="btn-outline text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3"
               >
                 Download CV ↗
               </a>
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <a
                 href={portfolioData.personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-text-dim hover:text-accent transition-colors duration-200"
               >
-                <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-mono">GitHub</span>
+                <GithubIcon className="w-4 sm:w-5 h-4 sm:h-5 group-hover:scale-110 transition-transform" />
+                <span className="text-xs sm:text-sm font-mono">GitHub</span>
               </a>
               <a
                 href={portfolioData.personal.linkedin}
@@ -165,8 +165,8 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-text-dim hover:text-accent transition-colors duration-200"
               >
-                <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-mono">LinkedIn</span>
+                <LinkedinIcon className="w-4 sm:w-5 h-4 sm:h-5 group-hover:scale-110 transition-transform" />
+                <span className="text-xs sm:text-sm font-mono">LinkedIn</span>
               </a>
               <a
                 href={portfolioData.personal.leetcode}
@@ -174,58 +174,58 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-text-dim hover:text-accent transition-colors duration-200"
               >
-                <span className="text-base group-hover:scale-110 transition-transform inline-block">⚡</span>
-                <span className="text-sm font-mono">LeetCode</span>
+                <span className="text-sm sm:text-base group-hover:scale-110 transition-transform inline-block">⚡</span>
+                <span className="text-xs sm:text-sm font-mono">LeetCode</span>
               </a>
             </div>
           </div>
 
           {/* Right visual — avatar / code block */}
-          <div className="flex-1 flex justify-center lg:justify-end">
+          <div className="flex-1 flex justify-center lg:justify-end w-full">
             <div className="relative">
               {/* Glow ring */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/20 via-accent2/10 to-accent3/20 blur-2xl scale-110" />
+              <div className="absolute inset-0 rounded-lg sm:rounded-2xl bg-gradient-to-br from-accent/20 via-accent2/10 to-accent3/20 blur-2xl scale-110" />
 
               {/* Card */}
-              <div className="relative glass-card rounded-2xl p-6 w-72 sm:w-80">
+              <div className="relative glass-card rounded-lg sm:rounded-2xl p-4 sm:p-6 w-64 sm:w-72 md:w-80">
                 {/* Terminal header */}
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
-                  <div className="w-3 h-3 rounded-full bg-red-500/70" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4 pb-2 sm:pb-3 border-b border-border">
+                  <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-red-500/70" />
+                  <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-yellow-500/70" />
+                  <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-green-500/70" />
                   <span className="ml-2 text-xs font-mono text-text-dim">profile.json</span>
                 </div>
 
                 {/* Code-like content */}
-                <div className="font-mono text-xs leading-relaxed space-y-1">
+                <div className="font-mono text-xs leading-relaxed space-y-0.5 sm:space-y-1">
                   <div>
                     <span className="text-accent2">{'{'}</span>
                   </div>
-                  <div className="pl-4">
+                  <div className="pl-3 sm:pl-4">
                     <span className="text-accent">"name"</span>
                     <span className="text-text-dim">: </span>
                     <span className="text-accent3">"Uday Garg"</span>
                     <span className="text-text-dim">,</span>
                   </div>
-                  <div className="pl-4">
+                  <div className="pl-3 sm:pl-4">
                     <span className="text-accent">"role"</span>
                     <span className="text-text-dim">: </span>
                     <span className="text-accent3">"Full Stack Dev"</span>
                     <span className="text-text-dim">,</span>
                   </div>
-                  <div className="pl-4">
+                  <div className="pl-3 sm:pl-4">
                     <span className="text-accent">"location"</span>
                     <span className="text-text-dim">: </span>
                     <span className="text-accent3">"Gurugram, IN"</span>
                     <span className="text-text-dim">,</span>
                   </div>
-                  <div className="pl-4">
+                  <div className="pl-3 sm:pl-4">
                     <span className="text-accent">"dsa"</span>
                     <span className="text-text-dim">: </span>
                     <span className="text-yellow-400">"400+ LeetCode"</span>
                     <span className="text-text-dim">,</span>
                   </div>
-                  <div className="pl-4">
+                  <div className="pl-3 sm:pl-4">
                     <span className="text-accent">"status"</span>
                     <span className="text-text-dim">: </span>
                     <span className="text-accent3">"open to work"</span>
@@ -236,17 +236,17 @@ export default function Hero() {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-border">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-border">
                   {[
                     { val: '400+', label: 'LC Solved' },
                     { val: '3+', label: 'Projects' },
                     { val: '5★', label: 'HackerRank' },
                   ].map((s) => (
                     <div key={s.label} className="text-center">
-                      <div className="font-display font-bold text-accent text-lg leading-none">
+                      <div className="font-display font-bold text-accent text-base sm:text-lg leading-none">
                         {s.val}
                       </div>
-                      <div className="text-text-dim font-mono text-xs mt-1">{s.label}</div>
+                      <div className="text-text-dim font-mono text-xs mt-0.5 sm:mt-1">{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -256,7 +256,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="flex justify-center mt-16 pb-8 animate-bounce">
+        <div className="hidden sm:flex justify-center mt-12 sm:mt-16 pb-6 sm:pb-8 animate-bounce">
           <div className="flex flex-col items-center gap-2 text-text-dim">
             <span className="text-xs font-mono tracking-widest">SCROLL</span>
             <div className="w-px h-8 bg-gradient-to-b from-accent/60 to-transparent" />
